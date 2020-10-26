@@ -19,11 +19,10 @@ namespace HUDCreationPractice.Initialization
             Console.Clear();
             Console.WriteLine("What is your name?");
             characterName = Console.ReadLine();
-            prepTable();
             runStatSheet();
             runTempSheet();
 
-            readItBack();
+            readItBack(characterName);
 //Console.WriteLine("Yo from CSG().Run();");
         }
         public void runStatSheet() 
@@ -57,14 +56,17 @@ namespace HUDCreationPractice.Initialization
             tempStatInfo.Add("");//
             File.WriteAllLines(tempSheet, tempStatInfo);
         }
-        public void readItBack() 
+        public void readItBack(string name) 
         {
             //want to read it back?
             Console.Clear();
+            statSheet = $"{name} Stat Sheet.txt";
+            characterName = name;
+            prepTable();
             readback = File.ReadAllLines(statSheet).ToList();
             Console.WriteLine("Character Info");
             int i = 0;
-            List<string> chart = new List<string>();
+            //List<string> chart = new List<string>();
             foreach (string line in readback)
             {
                 Console.WriteLine($"{preppedTable.ElementAt(i)}{line}");

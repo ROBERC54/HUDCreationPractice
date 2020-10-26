@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HUDCreationPractice.Initialization;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -18,6 +19,7 @@ namespace HUDCreationPractice.Kosmos
             Console.WriteLine("Yo from Cosmo");
             Console.WriteLine("PAKTC");
             Console.ReadKey();
+            new Character().Run();
         }
     }
 }

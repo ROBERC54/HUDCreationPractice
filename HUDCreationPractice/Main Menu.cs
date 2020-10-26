@@ -1,4 +1,5 @@
 ﻿using HUDCreationPractice.Initialization;
+using HUDCreationPractice.Kosmos;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -40,7 +41,7 @@ namespace HUDCreationPractice
                     new StartNewGame().Run();
                     break;
                 case ConsoleKey.R:
-                    Resume();
+                    new Cosmogony().Run();
                     break;
                 case ConsoleKey.H:
                     How_To();
