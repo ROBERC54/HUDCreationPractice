@@ -1,0 +1,12 @@
+﻿using System;
+
+namespace HUDCreationPractice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+        }
+    }
+}
