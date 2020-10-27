@@ -14,7 +14,6 @@ namespace HUDCreationPractice.Initialization
         {
 //Console.WriteLine("Yo from SNG().Run();");
             new AreYouSure().Run();
-            new Cosmogony().Run();
 //Console.WriteLine("Yo from SNG().Run();");
         }
     }

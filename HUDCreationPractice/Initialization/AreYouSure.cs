@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HUDCreationPractice.Kosmos;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -36,6 +37,7 @@ namespace HUDCreationPractice.Initialization
                     if(Continue())
                     {
                         new CharacterStatGenerator().Run();
+                        new Cosmogony().Run();
                     }
                     //currently returns to main menu
                     return true;
