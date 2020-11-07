@@ -27,11 +27,11 @@ namespace HUDCreationPractice.Kosmos
             protagonist = Characters.ElementAt(0);
             tempProtagonist = tempCharacters.ElementAt(0);
             new HUD().Run(protagonist, tempProtagonist);
-            foreach(string list in protagonist) 
-            {
-                Console.WriteLine(list);
-            }
-            Console.WriteLine("yiightyeet");
+            //foreach(string list in protagonist) 
+            //{
+            //    Console.WriteLine(list);
+            //}
+            Console.WriteLine("yiightyeetfromCosmogonyPAKTC");
             Console.ReadKey();
         }
     }

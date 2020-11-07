@@ -16,7 +16,7 @@ namespace HUDCreationPractice.Kosmos
         List<List<string>> tempCharacters;
         List<string> body;
         List<string> tempBody;
-        string statSheet = " Stat Sheet.txt";
+        //string statSheet = " Stat Sheet.txt";
         public Character() 
         { }
         public void Run() 

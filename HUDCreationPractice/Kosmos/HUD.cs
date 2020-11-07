@@ -21,7 +21,7 @@ namespace HUDCreationPractice.Kosmos
         {//remember it's Age, name, 2HP, MP, STM, 5ATK, UDF, LDF, 8SPD, INT, AGL
             //maxHP,HP,maxMP,MP,maxSTM,STM
             Console.Clear();
-            Console.WriteLine("HUD");
+            Console.Write("HUD");
             int.TryParse(protagonist.ElementAt(2), out HP);
             int.TryParse(tempProtagonist.ElementAt(1), out cHP);
             int.TryParse(protagonist.ElementAt(3), out MP);
@@ -29,10 +29,8 @@ namespace HUDCreationPractice.Kosmos
             int.TryParse(protagonist.ElementAt(4), out STM);
             int.TryParse(tempProtagonist.ElementAt(5), out cSTM);
             setUp();
-            Console.WriteLine($"{cHP}/{HP}||||||||||||||||||||||||||||||||||||||||||||||||||");
-            Console.WriteLine($"{cMP}/{MP}||||||||||||||||||||||||||||||||||||||||||||||||||");
-            Console.WriteLine($"{cSTM}/{STM}||||||||||||||||||||||||||||||||||||||||||||||||||");
-            Console.WriteLine("yhilightyeet");
+            Console.WriteLine("");//display was not a cwTABTAB
+            Console.WriteLine("yhilightyeetfrom HUD");
             Console.WriteLine("PAKTC");
             Console.ReadKey();
         }
@@ -41,20 +39,27 @@ namespace HUDCreationPractice.Kosmos
             numExtraHPbars = 0;
             numExtraMPbars = 0;
             numExtraSTMbars = 0;
-            (fullHP, numExtraHPbars) = runBar(HP, fullHP, numExtraHPbars);
-            (fullMP, numExtraMPbars) = runBar(MP, fullMP, numExtraMPbars);
-            (fullSTM, numExtraSTMbars) = runBar(STM, fullSTM, numExtraSTMbars);
-            barHP = 50*cHP / HP;
-            barMP = 50*cMP / MP;
+            (barHP, fullHP, numExtraHPbars) = runBar(HP, fullHP, numExtraHPbars);
+            (barMP, fullMP, numExtraMPbars) = runBar(MP, fullMP, numExtraMPbars);
+            (barSTM, fullSTM, numExtraSTMbars) = runBar(STM, fullSTM, numExtraSTMbars);
+            barHP = 50*cHP / HP;//bars were just set in the event I want to transition to using a renegade sroth system*<z
+            barMP = 50*cMP / MP;//this will require small reworks to display should you choose to come back and instate
             barSTM = 50*cSTM / STM;
-            int bleh = cHP / HP;
+            display(barHP, cHP, HP);
+            display(barMP, cMP, MP);
+            display(barSTM, cSTM, STM);
         }
-        public (double, double) runBar(int max, double full, double numExtra) 
+        public (double, double, double) runBar(int max, double full, double numExtra) 
         {
+                double i = max;
             if (max > 49)
             {
-                full = 50;
-                int i = max;
+                full = 50;//small reworks are in order if you wish to display more than 50 ticks
+                for (; (i / 10000) >= 1000;)
+                {
+                    i -= 10000000;
+                    numExtra += 200000;
+                }
                 for (; (i / 10000) >= 100;)
                 {
                     i -= 1000000;
@@ -86,7 +91,19 @@ namespace HUDCreationPractice.Kosmos
                 }
             }
             else { full = max; }
-            return (full, numExtra);
+            return (i, full, numExtra);
+        }
+        public void display(double barN, int cN, int mN)
+        { 
+            Console.Write($"\n{cN}/{mN}");
+            for (int i=0; i<barN; i++)
+            {
+                Console.Write("|");
+            }
+            for (double i = barN; i < 50; i++)
+            {
+                Console.Write("!");
+            }
         }
     }
 }

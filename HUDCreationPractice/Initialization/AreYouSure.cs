@@ -41,7 +41,7 @@ namespace HUDCreationPractice.Initialization
                     }
                     //currently returns to main menu
                     return true;
-                    break;
+                    //break;
 
                 case ConsoleKey.N:
                     Console.Clear();
@@ -49,7 +49,7 @@ namespace HUDCreationPractice.Initialization
                     Console.WriteLine("Press any key to continue.");
                     Console.ReadKey();
                     return true;
-                    break;
+                    //break;
             }
             return false;//handles keys other than valid options
         }
