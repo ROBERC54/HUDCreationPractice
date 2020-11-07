@@ -21,7 +21,6 @@ namespace HUDCreationPractice.Kosmos
         {//remember it's Age, name, 2HP, MP, STM, 5ATK, UDF, LDF, 8SPD, INT, AGL
             //maxHP,HP,maxMP,MP,maxSTM,STM
             Console.Clear();
-            Console.Write("HUD");
             int.TryParse(protagonist.ElementAt(2), out HP);
             int.TryParse(tempProtagonist.ElementAt(1), out cHP);
             int.TryParse(protagonist.ElementAt(3), out MP);
@@ -29,7 +28,6 @@ namespace HUDCreationPractice.Kosmos
             int.TryParse(protagonist.ElementAt(4), out STM);
             int.TryParse(tempProtagonist.ElementAt(5), out cSTM);
             setUp();
-            Console.WriteLine("");//display was not a cwTABTAB
             Console.WriteLine("yhilightyeetfrom HUD");
             Console.WriteLine("PAKTC");
             Console.ReadKey();
@@ -95,7 +93,7 @@ namespace HUDCreationPractice.Kosmos
         }
         public void display(double barN, int cN, int mN)
         { 
-            Console.Write($"\n{cN}/{mN}");
+            Console.Write($"{cN}/{mN}");
             for (int i=0; i<barN; i++)
             {
                 Console.Write("|");
@@ -104,6 +102,7 @@ namespace HUDCreationPractice.Kosmos
             {
                 Console.Write("!");
             }
+            Console.WriteLine("");
         }
     }
 }
